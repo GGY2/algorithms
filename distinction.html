@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Distinct numbers</h2>
+<h3 id="distinction" style="font-style: italic"></h3>
+
+<script>
+
+function compare(){
+
+const a = [2,4,6,8,1,5];
+const b = [1,3,5,7,9];
+const sum = [];
+
+for(let i = 0; i < a.length; i++){
+    if(b.indexOf(a[i]) === -1){
+        sum.push(a[i]);
+      }
+}
+
+for(let i = 0; i < b.length; i++){
+    if(a.indexOf(b[i]) === -1){
+        sum.push(b[i]);
+      }
+}
+
+const total = sum.reduce((a,b) => a + b);
+
+return `Total is ${total}. Unique elements are ${sum}`;
+
+}
+
+document.getElementById("distinction").innerHTML = compare();
+
+</script>
+</body>
+</html>
